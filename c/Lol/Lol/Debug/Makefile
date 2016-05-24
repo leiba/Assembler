@@ -35,7 +35,7 @@ SUBDIRS :=
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
-../learn.c
+../Lol.c
 
 
 PREPROCESSING_SRCS += 
@@ -45,24 +45,24 @@ ASM_SRCS +=
 
 
 OBJS +=  \
-learn.o
+Lol.o
 
 
 OBJS_AS_ARGS +=  \
-learn.o
+Lol.o
 
 
 C_DEPS +=  \
-learn.d
+Lol.d
 
 
 C_DEPS_AS_ARGS +=  \
-learn.d
+Lol.d
 
 
-OUTPUT_FILE_PATH +=learn.elf
+OUTPUT_FILE_PATH +=Lol.elf
 
-OUTPUT_FILE_PATH_AS_ARGS +=learn.elf
+OUTPUT_FILE_PATH_AS_ARGS +=Lol.elf
 
 ADDITIONAL_DEPENDENCIES:=
 
@@ -75,7 +75,7 @@ OUTPUT_FILE_DEP:= ./makedep.mk
 ./%.o: .././%.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler
-	$(QUOTE)D:\Soft\Atmel\extensions\Atmel\AVRGCC\3.3.2.31\AVRToolchain\bin\avr-gcc.exe$(QUOTE)  -funsigned-char -funsigned-bitfields -O1 -fpack-struct -fshort-enums -g2 -Wall -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)"  -mmcu=atmega8  -o"$@" "$<" 
+	$(QUOTE)D:\Soft\Atmel\extensions\Atmel\AVRGCC\3.3.2.31\AVRToolchain\bin\avr-gcc.exe$(QUOTE)  -funsigned-char -funsigned-bitfields -O1 -fpack-struct -fshort-enums -g2 -Wall -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)"  -mmcu=atmega32  -o"$@" "$<" 
 	@echo Finished building: $<
 
 
@@ -103,12 +103,12 @@ all: $(OUTPUT_FILE_PATH) $(ADDITIONAL_DEPENDENCIES)
 $(OUTPUT_FILE_PATH): $(OBJS) $(USER_OBJS) $(OUTPUT_FILE_DEP)
 	@echo Building target: $@
 	@echo Invoking: AVR/GNU C Linker
-	$(QUOTE)D:\Soft\Atmel\extensions\Atmel\AVRGCC\3.3.2.31\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -o$(OUTPUT_FILE_PATH_AS_ARGS) $(OBJS_AS_ARGS) $(USER_OBJS) $(LIBS) -Wl,-Map="learn.map" -Wl,--start-group -Wl,-lm  -Wl,--end-group  -mmcu=atmega8  
+	$(QUOTE)D:\Soft\Atmel\extensions\Atmel\AVRGCC\3.3.2.31\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -o$(OUTPUT_FILE_PATH_AS_ARGS) $(OBJS_AS_ARGS) $(USER_OBJS) $(LIBS) -Wl,-Map="Lol.map" -Wl,--start-group -Wl,-lm  -Wl,--end-group  -mmcu=atmega32  
 	@echo Finished building target: $@
-	"D:\Soft\Atmel\extensions\Atmel\AVRGCC\3.3.2.31\AVRToolchain\bin\avr-objcopy.exe" -O ihex -R .eeprom -R .fuse -R .lock -R .signature  "learn.elf" "learn.hex"
-	"D:\Soft\Atmel\extensions\Atmel\AVRGCC\3.3.2.31\AVRToolchain\bin\avr-objcopy.exe" -j .eeprom  --set-section-flags=.eeprom=alloc,load --change-section-lma .eeprom=0  --no-change-warnings -O ihex "learn.elf" "learn.eep" || exit 0
-	"D:\Soft\Atmel\extensions\Atmel\AVRGCC\3.3.2.31\AVRToolchain\bin\avr-objdump.exe" -h -S "learn.elf" > "learn.lss"
-	"D:\Soft\Atmel\extensions\Atmel\AVRGCC\3.3.2.31\AVRToolchain\bin\avr-size.exe" -C --mcu=atmega8  "learn.elf"
+	"D:\Soft\Atmel\extensions\Atmel\AVRGCC\3.3.2.31\AVRToolchain\bin\avr-objcopy.exe" -O ihex -R .eeprom -R .fuse -R .lock -R .signature  "Lol.elf" "Lol.hex"
+	"D:\Soft\Atmel\extensions\Atmel\AVRGCC\3.3.2.31\AVRToolchain\bin\avr-objcopy.exe" -j .eeprom  --set-section-flags=.eeprom=alloc,load --change-section-lma .eeprom=0  --no-change-warnings -O ihex "Lol.elf" "Lol.eep" || exit 0
+	"D:\Soft\Atmel\extensions\Atmel\AVRGCC\3.3.2.31\AVRToolchain\bin\avr-objdump.exe" -h -S "Lol.elf" > "Lol.lss"
+	"D:\Soft\Atmel\extensions\Atmel\AVRGCC\3.3.2.31\AVRToolchain\bin\avr-size.exe" -C --mcu=atmega32  "Lol.elf"
 	
 
 
@@ -117,5 +117,5 @@ $(OUTPUT_FILE_PATH): $(OBJS) $(USER_OBJS) $(OUTPUT_FILE_DEP)
 # Other Targets
 clean:
 	-$(RM) $(OBJS_AS_ARGS)$(C_DEPS_AS_ARGS) $(EXECUTABLES) 
-	rm -rf "learn.hex" "learn.lss" "learn.eep" "learn.map"
+	rm -rf "Lol.hex" "Lol.lss" "Lol.eep" "Lol.map"
 	

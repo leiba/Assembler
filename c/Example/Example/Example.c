@@ -7,7 +7,7 @@ int main(void)
 	int i = 0;
 	
 	UBRRH = 25;
-    UCSRA = 0x18;
+    UC = 0x18;
 	
     while(1)
     {
