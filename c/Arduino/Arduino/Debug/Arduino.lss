@@ -75,11 +75,11 @@ Disassembly of section .text:
 
 int main(void)
 {
-	DDRB  = 0xFF;
+	DDRC  = 0xFF;
   80:	8f ef       	ldi	r24, 0xFF	; 255
-  82:	84 b9       	out	0x04, r24	; 4
-	PORTB = 0x00;
-  84:	15 b8       	out	0x05, r1	; 5
+  82:	87 b9       	out	0x07, r24	; 7
+	PORTC = 0x00;
+  84:	18 b8       	out	0x08, r1	; 8
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
@@ -99,8 +99,8 @@ int main(void)
     while(1)
     {
 		_delay_ms(1000);
-		PORTB |= 0b00100000;
-  98:	2d 9a       	sbi	0x05, 5	; 5
+		PORTC |= 0b00010000;
+  98:	44 9a       	sbi	0x08, 4	; 8
   9a:	8f e7       	ldi	r24, 0x7F	; 127
   9c:	94 e8       	ldi	r25, 0x84	; 132
   9e:	ae e1       	ldi	r26, 0x1E	; 30
@@ -111,8 +111,8 @@ int main(void)
   a8:	00 c0       	rjmp	.+0      	; 0xaa <main+0x2a>
   aa:	00 00       	nop
         _delay_ms(10000);
-		PORTB = 0x00;  
-  ac:	15 b8       	out	0x05, r1	; 5
+		PORTC = 0x00;  
+  ac:	18 b8       	out	0x08, r1	; 8
   ae:	eb cf       	rjmp	.-42     	; 0x86 <main+0x6>
 
 000000b0 <_exit>:
