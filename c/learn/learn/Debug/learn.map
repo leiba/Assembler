@@ -2,19 +2,6 @@ Archive member included because of file (symbol)
 
 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr4\libgcc.a(_exit.o)
                               d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4/crtm8.o (exit)
-d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr4\libgcc.a(_copy_data.o)
-                              learn.o (__do_copy_data)
-d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4\libc.a(fputc.o)
-                              learn.o (fputc)
-d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4\libc.a(iob.o)
-                              learn.o (__iob)
-d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr4\libgcc.a(_clear_bss.o)
-                              d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4\libc.a(iob.o) (__do_clear_bss)
-
-Allocating common symbols
-Common symbol       size              file
-
-__iob               0x6               d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4\libc.a(iob.o)
 
 Memory Configuration
 
@@ -128,7 +115,7 @@ LOAD d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x130
+.text           0x00000000       0x48
  *(.vectors)
  .vectors       0x00000000       0x26 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4/crtm8.o
                 0x00000000                __vector_default
@@ -166,10 +153,6 @@ LOAD d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/
  *(.init3)
  *(.init3)
  *(.init4)
- .init4         0x00000032       0x16 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr4\libgcc.a(_copy_data.o)
-                0x00000032                __do_copy_data
- .init4         0x00000048       0x10 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr4\libgcc.a(_clear_bss.o)
-                0x00000048                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
@@ -180,49 +163,40 @@ LOAD d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x00000058        0x4 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4/crtm8.o
+ .init9         0x00000032        0x4 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4/crtm8.o
  *(.init9)
  *(.text)
- .text          0x0000005c        0x2 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4/crtm8.o
-                0x0000005c                __vector_1
-                0x0000005c                __vector_12
-                0x0000005c                __bad_interrupt
-                0x0000005c                __vector_6
-                0x0000005c                __vector_3
-                0x0000005c                __vector_11
-                0x0000005c                __vector_13
-                0x0000005c                __vector_17
-                0x0000005c                __vector_7
-                0x0000005c                __vector_5
-                0x0000005c                __vector_4
-                0x0000005c                __vector_9
-                0x0000005c                __vector_2
-                0x0000005c                __vector_15
-                0x0000005c                __vector_8
-                0x0000005c                __vector_14
-                0x0000005c                __vector_10
-                0x0000005c                __vector_16
-                0x0000005c                __vector_18
- .text          0x0000005e       0x76 learn.o
-                0x0000005e                main
- .text          0x000000d4        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr4\libgcc.a(_exit.o)
- .text          0x000000d4        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr4\libgcc.a(_copy_data.o)
- .text          0x000000d4        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4\libc.a(fputc.o)
- .text          0x000000d4        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4\libc.a(iob.o)
- .text          0x000000d4        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr4\libgcc.a(_clear_bss.o)
-                0x000000d4                . = ALIGN (0x2)
+ .text          0x00000036        0x2 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4/crtm8.o
+                0x00000036                __vector_1
+                0x00000036                __vector_12
+                0x00000036                __bad_interrupt
+                0x00000036                __vector_6
+                0x00000036                __vector_3
+                0x00000036                __vector_11
+                0x00000036                __vector_13
+                0x00000036                __vector_17
+                0x00000036                __vector_7
+                0x00000036                __vector_5
+                0x00000036                __vector_4
+                0x00000036                __vector_9
+                0x00000036                __vector_2
+                0x00000036                __vector_15
+                0x00000036                __vector_8
+                0x00000036                __vector_14
+                0x00000036                __vector_10
+                0x00000036                __vector_16
+                0x00000036                __vector_18
+ .text          0x00000038        0xc learn.o
+                0x00000038                main
+ .text          0x00000044        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr4\libgcc.a(_exit.o)
+                0x00000044                . = ALIGN (0x2)
  *(.text.*)
- .text.libgcc   0x000000d4        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr4\libgcc.a(_exit.o)
- .text.libgcc   0x000000d4        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr4\libgcc.a(_copy_data.o)
- .text.avr-libc
-                0x000000d4       0x58 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4\libc.a(fputc.o)
-                0x000000d4                fputc
- .text.libgcc   0x0000012c        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr4\libgcc.a(_clear_bss.o)
-                0x0000012c                . = ALIGN (0x2)
+ .text.libgcc   0x00000044        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr4\libgcc.a(_exit.o)
+                0x00000044                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000012c        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr4\libgcc.a(_exit.o)
-                0x0000012c                _exit
-                0x0000012c                exit
+ .fini9         0x00000044        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr4\libgcc.a(_exit.o)
+                0x00000044                _exit
+                0x00000044                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -241,52 +215,42 @@ LOAD d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000012c        0x4 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr4\libgcc.a(_exit.o)
+ .fini0         0x00000044        0x4 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr4\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000130                _etext = .
+                0x00000048                _etext = .
 
-.data           0x00800060        0x6 load address 0x00000130
+.data           0x00800060        0x0 load address 0x00000048
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800060        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4/crtm8.o
- .data          0x00800060        0x6 learn.o
- .data          0x00800066        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr4\libgcc.a(_exit.o)
- .data          0x00800066        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr4\libgcc.a(_copy_data.o)
- .data          0x00800066        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4\libc.a(fputc.o)
- .data          0x00800066        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4\libc.a(iob.o)
- .data          0x00800066        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr4\libgcc.a(_clear_bss.o)
+ .data          0x00800060        0x0 learn.o
+ .data          0x00800060        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr4\libgcc.a(_exit.o)
  *(.data*)
  *(.rodata)
  *(.rodata*)
  *(.gnu.linkonce.d*)
-                0x00800066                . = ALIGN (0x2)
-                0x00800066                _edata = .
-                0x00800066                PROVIDE (__data_end, .)
+                0x00800060                . = ALIGN (0x2)
+                0x00800060                _edata = .
+                0x00800060                PROVIDE (__data_end, .)
 
-.bss            0x00800066        0x6
-                0x00800066                PROVIDE (__bss_start, .)
+.bss            0x00800060        0x0
+                0x00800060                PROVIDE (__bss_start, .)
  *(.bss)
- .bss           0x00800066        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4/crtm8.o
- .bss           0x00800066        0x0 learn.o
- .bss           0x00800066        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr4\libgcc.a(_exit.o)
- .bss           0x00800066        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr4\libgcc.a(_copy_data.o)
- .bss           0x00800066        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4\libc.a(fputc.o)
- .bss           0x00800066        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4\libc.a(iob.o)
- .bss           0x00800066        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr4\libgcc.a(_clear_bss.o)
+ .bss           0x00800060        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4/crtm8.o
+ .bss           0x00800060        0x0 learn.o
+ .bss           0x00800060        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr4\libgcc.a(_exit.o)
  *(.bss*)
  *(COMMON)
- COMMON         0x00800066        0x6 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4\libc.a(iob.o)
-                0x00800066                __iob
-                0x0080006c                PROVIDE (__bss_end, .)
-                0x00000130                __data_load_start = LOADADDR (.data)
-                0x00000136                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00800060                PROVIDE (__bss_end, .)
+                0x00000048                __data_load_start = LOADADDR (.data)
+                0x00000048                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0080006c        0x0
-                0x0080006c                PROVIDE (__noinit_start, .)
+.noinit         0x00800060        0x0
+                0x00800060                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x0080006c                PROVIDE (__noinit_end, .)
-                0x0080006c                _end = .
-                0x0080006c                PROVIDE (__heap_start, .)
+                0x00800060                PROVIDE (__noinit_end, .)
+                0x00800060                _end = .
+                0x00800060                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -339,60 +303,41 @@ LOAD d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000       0x40
+.debug_aranges  0x00000000       0x20
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x20 learn.o
- .debug_aranges
-                0x00000020       0x20 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4\libc.a(fputc.o)
 
 .debug_pubnames
-                0x00000000       0x53
+                0x00000000       0x1b
  *(.debug_pubnames)
  .debug_pubnames
                 0x00000000       0x1b learn.o
- .debug_pubnames
-                0x0000001b       0x1c d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4\libc.a(fputc.o)
- .debug_pubnames
-                0x00000037       0x1c d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4\libc.a(iob.o)
 
-.debug_info     0x00000000      0x457
+.debug_info     0x00000000       0x82
  *(.debug_info)
- .debug_info    0x00000000      0x1a1 learn.o
- .debug_info    0x000001a1      0x167 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4\libc.a(fputc.o)
- .debug_info    0x00000308      0x14f d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4\libc.a(iob.o)
+ .debug_info    0x00000000       0x82 learn.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev   0x00000000      0x2a1
+.debug_abbrev   0x00000000       0x4e
  *(.debug_abbrev)
- .debug_abbrev  0x00000000      0x103 learn.o
- .debug_abbrev  0x00000103       0xd9 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4\libc.a(fputc.o)
- .debug_abbrev  0x000001dc       0xc5 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4\libc.a(iob.o)
+ .debug_abbrev  0x00000000       0x4e learn.o
 
-.debug_line     0x00000000      0x394
+.debug_line     0x00000000       0xe7
  *(.debug_line)
- .debug_line    0x00000000      0x11a learn.o
- .debug_line    0x0000011a      0x16b d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4\libc.a(fputc.o)
- .debug_line    0x00000285      0x10f d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4\libc.a(iob.o)
+ .debug_line    0x00000000       0xe7 learn.o
 
-.debug_frame    0x00000000       0x40
+.debug_frame    0x00000000       0x20
  *(.debug_frame)
  .debug_frame   0x00000000       0x20 learn.o
- .debug_frame   0x00000020       0x20 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4\libc.a(fputc.o)
 
-.debug_str      0x00000000      0x167
+.debug_str      0x00000000       0x74
  *(.debug_str)
- .debug_str     0x00000000       0x98 learn.o
-                                 0xd1 (size before relaxing)
- .debug_str     0x00000098       0x6f d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4\libc.a(fputc.o)
-                                0x10d (size before relaxing)
- .debug_str     0x00000107       0x60 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4\libc.a(iob.o)
-                                0x104 (size before relaxing)
+ .debug_str     0x00000000       0x74 learn.o
+                                 0xa8 (size before relaxing)
 
-.debug_loc      0x00000000       0x94
+.debug_loc
  *(.debug_loc)
- .debug_loc     0x00000000       0x44 learn.o
- .debug_loc     0x00000044       0x50 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4\libc.a(fputc.o)
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -400,13 +345,6 @@ OUTPUT(learn.elf elf32-avr)
 LOAD linker stubs
 
 .debug_pubtypes
-                0x00000000       0x7b
+                0x00000000       0x1e
  .debug_pubtypes
-                0x00000000       0x29 learn.o
- .debug_pubtypes
-                0x00000029       0x29 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4\libc.a(fputc.o)
- .debug_pubtypes
-                0x00000052       0x29 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4\libc.a(iob.o)
-
-.debug_ranges   0x00000000       0x10
- .debug_ranges  0x00000000       0x10 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr4\libc.a(fputc.o)
+                0x00000000       0x1e learn.o
