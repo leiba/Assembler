@@ -1,4 +1,16 @@
 /*
+ Типы
+*/
+typedef signed char int8_t;              // -128 .. 128
+typedef unsigned char uint8_t;           // 0 .. 255
+typedef int int16_t;                     // -32768 .. 32767
+typedef unsigned int uint16_t;           // 0 .. 65535
+typedef signed long int int32_t;         // -2147483648 .. 2147483647
+typedef unsigned long int uint32_t;      // 0 .. 4294967295
+typedef signed long long int int64_t;    // -9223372036854775808 .. 9223372036854775807
+typedef unsigned long long int uint64_t; // 0 .. 18446744073709551615
+
+/*
  Синтаксис
 */
 extern int n = 1;      // Область видимости во всех файлах
@@ -216,6 +228,14 @@ for(;;) {}
 #else
 	#error "Wrong rules"  // Генерируем сообщение об ошибке 
 #endif
+
+/*
+ Прерывания
+ http://www.nongnu.org/avr-libc/user-manual/group__avr__interrupts.html
+*/
+
+#include <avr/interrupt.h>
+ISR(ADC_vect) {}           // Регистрирование обработчика прерывания
 
 /*
  Порты

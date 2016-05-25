@@ -18,3 +18,11 @@ int main(void)
 	    putchar(str[i++]);
     }
 }
+
+INTERRUPT(SIG_ADC){
+
+}
+
+SIG(SIG_ADC) {
+	
+}
