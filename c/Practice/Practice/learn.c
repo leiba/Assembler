@@ -262,12 +262,20 @@ for(;;) {}
 28 - A5 // PORTC |= 0b00100000 (Analog)
 
 /*
- Прерывания
- http://www.nongnu.org/avr-libc/user-manual/group__avr__interrupts.html
+ Прерывания уровня (INT0, INT1)
+ 
+ EICRA. Datasheet -> External Interrupts. Настройка реагирования на уровни
+ EIMSK. Datasheet -> External Interrupts. Разрешение конкретного прерывания
 */
-
 #include <avr/interrupt.h>
-ISR(ADC_vect) {}           // Регистрирование обработчика прерывания
+
+ISR(INT0_vect) {}          // Регистрирование обработчика прерывания
+void main() {
+	sei();                 // Разрешаем глобальные прерывания
+	cli();                 // Запрещаем глобальные прерывания
+	EICRA |= (1 << ISC01); // Настройка уровня
+	EIMSK |= (1 << INT0);  // Разрешение прерывания INT0	
+}
 
 /*
  Порты
@@ -283,3 +291,5 @@ void main(){
 DDRA |= 0b0000001;     // Установка порта A0 на вывод, по умолчанию 0 - ввод
 PORTA |= 0b00000001;   // Установка 1 на выводе A0
 n = PINA & 0b00000001; // Чтение бита из вывода
+
+http://www.nongnu.org/avr-libc/user-manual/group__avr__interrupts.html
