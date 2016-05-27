@@ -274,22 +274,6 @@ void main(){
 }
 
 /*
- Прерывания уровня (INT0, INT1)
- 
- EICRA. Datasheet -> External Interrupts. Настройка реагирования на уровни
- EIMSK. Datasheet -> External Interrupts. Разрешение конкретного прерывания
-*/
-#include <avr/interrupt.h>
-
-ISR(INT0_vect) {}          // Регистрирование обработчика прерывания
-void main() {
-    sei();                 // Разрешаем глобальные прерывания
-    cli();                 // Запрещаем глобальные прерывания
-    EICRA |= (1 << ISC01); // Настройка уровня
-    EIMSK |= (1 << INT0);  // Разрешение прерывания INT0	
-}
-
-/*
  Таймеры\Счетчики
  http://eleccelerator.com/avr-timer-calculator
  
@@ -329,6 +313,31 @@ ISR(TIMER0_COMPA_vect) {
 
 ISR (TIMER0_COMPB_vect) {
     // Совпадение OCR0B
+}
+
+/*
+ Внешние прерывания (INT0, INTn)
+ 
+ Datasheet -> External Interrupts
+*/
+#include <avr/interrupt.h>
+
+void main() {
+    sei(); // Разрешаем глобальные прерывания
+	
+    // Control register. Настройка реакции на уровни фронт\спад
+    EICRA = (1 << ISC10) | (1 << ISC11); // Реакция на нарастающий уровень
+	
+    // External interrupt mask register. Разрешение прерываний в портах
+    EIMSK = (1 << INT0) | (1 << INT1);  // Разрешение прерывания на портах INT0 и INT1	
+}
+
+ISR(INT0_vect) {
+    // Прерывание INT0
+}
+	
+ISR(INT1_vect) {
+    // Прерывание INT1
 }
 
 http://www.nongnu.org/avr-libc/user-manual/group__avr__interrupts.html

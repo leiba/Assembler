@@ -2,6 +2,8 @@ Archive member included because of file (symbol)
 
 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
                               d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o (exit)
+d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
+                              Arduino.o (__do_clear_bss)
 
 Memory Configuration
 
@@ -116,7 +118,7 @@ LOAD d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x118
+.text           0x00000000      0x150
  *(.vectors)
  .vectors       0x00000000       0x68 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o
                 0x00000000                __vector_default
@@ -154,6 +156,8 @@ LOAD d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/
  *(.init3)
  *(.init3)
  *(.init4)
+ .init4         0x00000074       0x10 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
+                0x00000074                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
@@ -164,47 +168,49 @@ LOAD d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x00000074        0x8 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o
+ .init9         0x00000084        0x8 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o
  *(.init9)
  *(.text)
- .text          0x0000007c        0x4 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o
-                0x0000007c                __vector_22
-                0x0000007c                __vector_1
-                0x0000007c                __vector_24
-                0x0000007c                __vector_12
-                0x0000007c                __bad_interrupt
-                0x0000007c                __vector_6
-                0x0000007c                __vector_3
-                0x0000007c                __vector_23
-                0x0000007c                __vector_25
-                0x0000007c                __vector_11
-                0x0000007c                __vector_13
-                0x0000007c                __vector_17
-                0x0000007c                __vector_19
-                0x0000007c                __vector_7
-                0x0000007c                __vector_5
-                0x0000007c                __vector_4
-                0x0000007c                __vector_9
-                0x0000007c                __vector_2
-                0x0000007c                __vector_21
-                0x0000007c                __vector_8
-                0x0000007c                __vector_10
-                0x0000007c                __vector_16
-                0x0000007c                __vector_18
-                0x0000007c                __vector_20
- .text          0x00000080       0x94 Arduino.o
-                0x00000080                __vector_14
-                0x000000ba                __vector_15
-                0x000000f8                main
- .text          0x00000114        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
-                0x00000114                . = ALIGN (0x2)
+ .text          0x0000008c        0x4 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o
+                0x0000008c                __vector_22
+                0x0000008c                __vector_1
+                0x0000008c                __vector_24
+                0x0000008c                __vector_12
+                0x0000008c                __bad_interrupt
+                0x0000008c                __vector_6
+                0x0000008c                __vector_3
+                0x0000008c                __vector_23
+                0x0000008c                __vector_25
+                0x0000008c                __vector_11
+                0x0000008c                __vector_13
+                0x0000008c                __vector_17
+                0x0000008c                __vector_19
+                0x0000008c                __vector_7
+                0x0000008c                __vector_5
+                0x0000008c                __vector_4
+                0x0000008c                __vector_9
+                0x0000008c                __vector_2
+                0x0000008c                __vector_21
+                0x0000008c                __vector_8
+                0x0000008c                __vector_10
+                0x0000008c                __vector_16
+                0x0000008c                __vector_18
+                0x0000008c                __vector_20
+ .text          0x00000090       0xbc Arduino.o
+                0x00000090                __vector_14
+                0x000000e0                __vector_15
+                0x00000130                main
+ .text          0x0000014c        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+ .text          0x0000014c        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
+                0x0000014c                . = ALIGN (0x2)
  *(.text.*)
- .text.libgcc   0x00000114        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
-                0x00000114                . = ALIGN (0x2)
+ .text.libgcc   0x0000014c        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x0000014c        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
+                0x0000014c                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000114        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
-                0x00000114                _exit
-                0x00000114                exit
+ .fini9         0x0000014c        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+                0x0000014c                _exit
+                0x0000014c                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -223,16 +229,17 @@ LOAD d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000114        0x4 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+ .fini0         0x0000014c        0x4 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000118                _etext = .
+                0x00000150                _etext = .
 
-.data           0x00800100        0x0 load address 0x00000118
+.data           0x00800100        0x0 load address 0x00000150
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800100        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o
  .data          0x00800100        0x0 Arduino.o
  .data          0x00800100        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+ .data          0x00800100        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
  *(.data*)
  *(.rodata)
  *(.rodata*)
@@ -241,24 +248,27 @@ LOAD d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/
                 0x00800100                _edata = .
                 0x00800100                PROVIDE (__data_end, .)
 
-.bss            0x00800100        0x0
+.bss            0x00800100        0x4
                 0x00800100                PROVIDE (__bss_start, .)
  *(.bss)
  .bss           0x00800100        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o
- .bss           0x00800100        0x0 Arduino.o
- .bss           0x00800100        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+ .bss           0x00800100        0x4 Arduino.o
+                0x00800100                a
+                0x00800102                b
+ .bss           0x00800104        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+ .bss           0x00800104        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
  *(.bss*)
  *(COMMON)
-                0x00800100                PROVIDE (__bss_end, .)
-                0x00000118                __data_load_start = LOADADDR (.data)
-                0x00000118                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00800104                PROVIDE (__bss_end, .)
+                0x00000150                __data_load_start = LOADADDR (.data)
+                0x00000150                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800100        0x0
-                0x00800100                PROVIDE (__noinit_start, .)
+.noinit         0x00800104        0x0
+                0x00800104                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x00800100                PROVIDE (__noinit_end, .)
-                0x00800100                _end = .
-                0x00800100                PROVIDE (__heap_start, .)
+                0x00800104                PROVIDE (__noinit_end, .)
+                0x00800104                _end = .
+                0x00800104                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -317,32 +327,32 @@ LOAD d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/
                 0x00000000       0x20 Arduino.o
 
 .debug_pubnames
-                0x00000000       0x3b
+                0x00000000       0x47
  *(.debug_pubnames)
  .debug_pubnames
-                0x00000000       0x3b Arduino.o
+                0x00000000       0x47 Arduino.o
 
-.debug_info     0x00000000      0x1c5
+.debug_info     0x00000000       0xe2
  *(.debug_info)
- .debug_info    0x00000000      0x1c5 Arduino.o
+ .debug_info    0x00000000       0xe2 Arduino.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev   0x00000000      0x10c
+.debug_abbrev   0x00000000       0x85
  *(.debug_abbrev)
- .debug_abbrev  0x00000000      0x10c Arduino.o
+ .debug_abbrev  0x00000000       0x85 Arduino.o
 
-.debug_line     0x00000000      0x1e7
+.debug_line     0x00000000      0x159
  *(.debug_line)
- .debug_line    0x00000000      0x1e7 Arduino.o
+ .debug_line    0x00000000      0x159 Arduino.o
 
 .debug_frame    0x00000000       0x40
  *(.debug_frame)
  .debug_frame   0x00000000       0x40 Arduino.o
 
-.debug_str      0x00000000       0xf8
+.debug_str      0x00000000       0x92
  *(.debug_str)
- .debug_str     0x00000000       0xf8 Arduino.o
-                                0x12c (size before relaxing)
+ .debug_str     0x00000000       0x92 Arduino.o
+                                 0xc6 (size before relaxing)
 
 .debug_loc
  *(.debug_loc)
@@ -353,6 +363,6 @@ OUTPUT(Arduino.elf elf32-avr)
 LOAD linker stubs
 
 .debug_pubtypes
-                0x00000000       0x38
+                0x00000000       0x1e
  .debug_pubtypes
-                0x00000000       0x38 Arduino.o
+                0x00000000       0x1e Arduino.o

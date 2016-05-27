@@ -2,16 +2,22 @@
 #include <avr/interrupt.h>
 #include <util/delay.h>
 
-#define F_CPU 16E6
+#define F_CPU 20000000
+
+int a = 0, b = 0;
 
 ISR (TIMER0_COMPA_vect) {
-	PORTB ^= PORTB0;
-	_delay_ms(1000);
+	if (a++ > 100) {
+		PORTB ^= (1 << PORTB0);
+		a = 0;
+	}
 }
 	
 ISR (TIMER0_COMPB_vect) {
-	PORTB ^= PORTB1;
-	_delay_ms(1000);
+	if (b++ > 50) {
+		PORTB ^= (1 << PORTB1);
+		b = 0;
+	}	
 }
 
 int main(void)
@@ -22,8 +28,8 @@ int main(void)
 	TCCR0A = (1 << WGM01);
 	TCCR0B = (1 << CS02) | (1 << CS00);
 	
-	OCR0A  = 200;
-	OCR0B  = 200; 
+	OCR0A  = 195;
+	OCR0B  = 195; 
 	
 	TIMSK0 = (1 << OCIE0A) | (1 << OCIE0B);	
 
