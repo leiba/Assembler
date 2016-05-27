@@ -278,6 +278,46 @@ void main() {
 }
 
 /*
+ Таймеры\Счетчики
+ http://eleccelerator.com/avr-timer-calculator
+ 
+ Datasheet -> 8/16-bit timer.
+   Output compare unit. Что с чем сравнивается
+   Register description. Описание регистров
+*/
+int main(void)
+{
+	sei(); // Разрешение глобальных прерываний. Set "I" bit in Status Register
+	
+	// Waveform generation mode. Режим работы таймера
+	TCCR0A |= (1 << WGM01); // CTC Mode. Clear timer on compare. Сброс при достижении
+	
+	// Clock select bit. Предделитель
+	TCCR0B |= (1 << CS02) | (CS00); // Предделитель 1024
+	
+	// Timer counter register
+	TCNT0; // Счетчик тиков
+	
+	// Output compare register. Регистры сравнения для прерывания
+	// Для одного таймера может быть несколько 
+	OCR0A = 200; // Прерывание после 200 тиков	
+	OCR0B = 100; // Прерывание после 100 тиков
+	
+	// Timer/Counter Interrupt mask register
+	// Разрешение прерывания
+	TIMSK0 |= (1 << OCIE0A); // Разрешение прерывания OCR0A. Output compare match A Enabled
+	TIMSK0 |= (1 << OCIE0B); // Разрешение прерывания OCR0B. Output compare match B Enabled
+}
+
+ISR(TIMER0_COMPA_vect) {
+	// Совпадение OCR0A
+}
+
+ISR (TIMER0_COMPB_vect) {
+	// Совпадение OCR0B
+}
+
+/*
  Порты
 */
 void main(){

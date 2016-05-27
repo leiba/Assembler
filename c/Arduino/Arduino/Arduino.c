@@ -1,37 +1,35 @@
 #include <avr/io.h>
-#include <util/delay.h>
 #include <avr/interrupt.h>
-#include <avr/sfr_defs.h>
+#include <util/delay.h>
 
 #define F_CPU 16E6
 
-ISR(INT1_vect) {
-	int8_t i, temp = PORTB;
-	PORTB = 0;
+ISR (TIMER0_COMPA_vect) {
+	PORTB ^= 0b00000001;
+	_delay_ms(1000);
+}
 	
-	for (i = 0; i <= 6; i++) {
-		PORTB |= 1 << i;
-		_delay_ms(3000);
-	}
-	
-	PORTB = temp;
+ISR (TIMER0_COMPB_vect) {
+	PORTB ^= 0b00000010;
+	_delay_ms(1000);
 }
 
 int main(void)
 {
-	DDRB  = 0xFF;
-	PORTB = 0x00;
-	
-	EICRA |= (1<<ISC11);
-	EIMSK |= (1<<INT1);
+	DDRB = 0xFF;
 	
 	sei();
+	TCCR0A = (1 << WGM01);
+	TCCR0B = (1 << CS02) | (1 << CS00);
 	
-    while(1)
-    {
-		PORTB = 0b00111111;
-		_delay_ms(1000);
-		PORTB = 0;
-		_delay_ms(1000);	
-    }
+	OCR0A  = 200;
+	OCR0B  = 200; 
+	
+	TIMSK0 = (1 << OCIE0A) | (1 << OCIE0B);
+	
+	
+	
+
+	while (1) {}	
 }
+
