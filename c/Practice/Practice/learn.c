@@ -23,8 +23,8 @@ func(int n);           // Прототип функции до ее определения, затычка
  Статические переменные
 */
 int plus5(){
-	static int n; // Инициализируется как 0, заоминается значение между вызовами
-	return n + 5;
+    static int n; // Инициализируется как 0, заоминается значение между вызовами
+    return n + 5;
 }
 
 /*
@@ -33,9 +33,9 @@ int plus5(){
  Могут быть параметрами и возвращаемыми значениями функций
 */
 struct Date {
-	int year;
-	int month;
-	int day;
+    int year;
+    int month;
+    int day;
 };
 struct Date myDate;             // Пустая инициализация
 struct Date myDate = {28,5,90}; // Инициализация с установкой значений
@@ -57,10 +57,10 @@ u = 0xff;     // Присваеваем указателю произвольный участок памяти
  Можно возвращать такми способом больше 1 значения
 */
 int sum(int *a, int *b){
-	int s = *a + *b; // В указателях содержатся значения
-	*a = *a / s;     // Меняем значение по указателю
-	*b = *b / s;     // Меняем значение по указателю
-	return s;        // Возвращаемое значение
+    int s = *a + *b; // В указателях содержатся значения
+    *a = *a / s;     // Меняем значение по указателю
+    *b = *b / s;     // Меняем значение по указателю
+    return s;        // Возвращаемое значение
 }
 
 /*
@@ -76,8 +76,8 @@ u->day = 7;         // Присваивание значения по указателю
  Указатели как поля структуры
 */
 struct Dates {
-	int day,
-	struct Dates *next
+    int day,
+    struct Dates *next
 };
 struct Dates myDates, myDates2;
 myDates.next = &myDates2;
@@ -207,26 +207,26 @@ for(;;) {}
  Макросы с проверкой существования макросов
 */
 #ifdef MyName             // Если определен макрос
-	#define MyName2 "One"
+    #define MyName2 "One"
 #else                     // В противном случае
-	#define MyName2 "Two"
+    #define MyName2 "Two"
 #endif
 
 #ifndef MyName            // Если не определен макрос
-	#define MyName2 "One"
+    #define MyName2 "One"
 #else                     // В противном случае
-	#define MyName2 "Two"
+    #define MyName2 "Two"
 #endif
 
 /*
  Макросы с условиями
 */
 #if 1 == 2
-	#define MyName2 "One"
+    #define MyName2 "One"
 #elif 1 == 3
-	#define MyName2 "Two"
+    #define MyName2 "Two"
 #else
-	#error "Wrong rules"  // Генерируем сообщение об ошибке 
+    #error "Wrong rules"  // Генерируем сообщение об ошибке 
 #endif
 
 /*
@@ -271,10 +271,10 @@ for(;;) {}
 
 ISR(INT0_vect) {}          // Регистрирование обработчика прерывания
 void main() {
-	sei();                 // Разрешаем глобальные прерывания
-	cli();                 // Запрещаем глобальные прерывания
-	EICRA |= (1 << ISC01); // Настройка уровня
-	EIMSK |= (1 << INT0);  // Разрешение прерывания INT0	
+    sei();                 // Разрешаем глобальные прерывания
+    cli();                 // Запрещаем глобальные прерывания
+    EICRA |= (1 << ISC01); // Настройка уровня
+    EIMSK |= (1 << INT0);  // Разрешение прерывания INT0	
 }
 
 /*
