@@ -116,7 +116,7 @@ LOAD d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x11c
+.text           0x00000000      0x118
  *(.vectors)
  .vectors       0x00000000       0x68 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o
                 0x00000000                __vector_default
@@ -192,19 +192,19 @@ LOAD d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/
                 0x0000007c                __vector_16
                 0x0000007c                __vector_18
                 0x0000007c                __vector_20
- .text          0x00000080       0x98 Arduino.o
+ .text          0x00000080       0x94 Arduino.o
                 0x00000080                __vector_14
-                0x000000be                __vector_15
-                0x000000fc                main
- .text          0x00000118        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
-                0x00000118                . = ALIGN (0x2)
+                0x000000ba                __vector_15
+                0x000000f8                main
+ .text          0x00000114        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+                0x00000114                . = ALIGN (0x2)
  *(.text.*)
- .text.libgcc   0x00000118        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
-                0x00000118                . = ALIGN (0x2)
+ .text.libgcc   0x00000114        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+                0x00000114                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000118        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
-                0x00000118                _exit
-                0x00000118                exit
+ .fini9         0x00000114        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+                0x00000114                _exit
+                0x00000114                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -223,11 +223,11 @@ LOAD d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000118        0x4 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000114        0x4 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x0000011c                _etext = .
+                0x00000118                _etext = .
 
-.data           0x00800100        0x0 load address 0x0000011c
+.data           0x00800100        0x0 load address 0x00000118
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800100        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o
@@ -250,8 +250,8 @@ LOAD d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/
  *(.bss*)
  *(COMMON)
                 0x00800100                PROVIDE (__bss_end, .)
-                0x0000011c                __data_load_start = LOADADDR (.data)
-                0x0000011c                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000118                __data_load_start = LOADADDR (.data)
+                0x00000118                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00800100        0x0
                 0x00800100                PROVIDE (__noinit_start, .)

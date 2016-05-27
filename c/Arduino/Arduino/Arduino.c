@@ -5,12 +5,12 @@
 #define F_CPU 16E6
 
 ISR (TIMER0_COMPA_vect) {
-	PORTB ^= 0b00000001;
+	PORTB ^= PORTB0;
 	_delay_ms(1000);
 }
 	
 ISR (TIMER0_COMPB_vect) {
-	PORTB ^= 0b00000010;
+	PORTB ^= PORTB1;
 	_delay_ms(1000);
 }
 
@@ -25,10 +25,7 @@ int main(void)
 	OCR0A  = 200;
 	OCR0B  = 200; 
 	
-	TIMSK0 = (1 << OCIE0A) | (1 << OCIE0B);
-	
-	
-	
+	TIMSK0 = (1 << OCIE0A) | (1 << OCIE0B);	
 
 	while (1) {}	
 }

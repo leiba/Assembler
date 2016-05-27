@@ -262,6 +262,18 @@ for(;;) {}
 28 - A5 // PORTC |= 0b00100000 (Analog)
 
 /*
+ Порты
+*/
+void main(){
+    DDRB = 0x00; // Настраиваем порты B на вход
+    DDRC = 0xFF; // Настраиваем порты C на выход
+	
+    while(1) {
+        PORTC = PINB; // Пишем в порты C значения портов B
+    }
+}
+
+/*
  Прерывания уровня (INT0, INT1)
  
  EICRA. Datasheet -> External Interrupts. Настройка реагирования на уровни
@@ -285,51 +297,38 @@ void main() {
    Output compare unit. Что с чем сравнивается
    Register description. Описание регистров
 */
+#include <avr/interrupt.h>
+
 int main(void)
 {
-	sei(); // Разрешение глобальных прерываний. Set "I" bit in Status Register
+    sei(); // Разрешение глобальных прерываний. Set "I" bit in Status Register
 	
-	// Waveform generation mode. Режим работы таймера
-	TCCR0A |= (1 << WGM01); // CTC Mode. Clear timer on compare. Сброс при достижении
+    // Waveform generation mode. Режим работы таймера
+    TCCR0A |= (1 << WGM01); // CTC Mode. Clear timer on compare. Сброс при достижении
 	
-	// Clock select bit. Предделитель
-	TCCR0B |= (1 << CS02) | (CS00); // Предделитель 1024
+    // Clock select bit. Предделитель
+    TCCR0B |= (1 << CS02) | (CS00); // Предделитель 1024
 	
-	// Timer counter register
-	TCNT0; // Счетчик тиков
+    // Timer counter register
+    TCNT0; // Счетчик тиков
 	
-	// Output compare register. Регистры сравнения для прерывания
-	// Для одного таймера может быть несколько 
-	OCR0A = 200; // Прерывание после 200 тиков	
-	OCR0B = 100; // Прерывание после 100 тиков
+    // Output compare register. Регистры сравнения для прерывания
+    // Для одного таймера может быть несколько 
+    OCR0A = 200; // Прерывание после 200 тиков	
+    OCR0B = 100; // Прерывание после 100 тиков
 	
-	// Timer/Counter Interrupt mask register
-	// Разрешение прерывания
-	TIMSK0 |= (1 << OCIE0A); // Разрешение прерывания OCR0A. Output compare match A Enabled
-	TIMSK0 |= (1 << OCIE0B); // Разрешение прерывания OCR0B. Output compare match B Enabled
+    // Timer/Counter Interrupt mask register
+    // Разрешение прерывания
+    TIMSK0 |= (1 << OCIE0A); // Разрешение прерывания OCR0A. Output compare match A Enabled
+    TIMSK0 |= (1 << OCIE0B); // Разрешение прерывания OCR0B. Output compare match B Enabled
 }
 
 ISR(TIMER0_COMPA_vect) {
-	// Совпадение OCR0A
+    // Совпадение OCR0A
 }
 
 ISR (TIMER0_COMPB_vect) {
-	// Совпадение OCR0B
+    // Совпадение OCR0B
 }
-
-/*
- Порты
-*/
-void main(){
-	DDRB = 0x00; // Настраиваем порты B на вход
-	DDRC = 0xFF; // Настраиваем порты C на выход
-	
-	while(1) {
-		PORTC = PINB; // Пишем в порты C значения портов B
-	}
-}
-DDRA |= 0b0000001;     // Установка порта A0 на вывод, по умолчанию 0 - ввод
-PORTA |= 0b00000001;   // Установка 1 на выводе A0
-n = PINA & 0b00000001; // Чтение бита из вывода
 
 http://www.nongnu.org/avr-libc/user-manual/group__avr__interrupts.html
