@@ -2,72 +2,68 @@
 #include <avr/interrupt.h>
 #include <util/delay.h>
 
-#define F_CPU 20000000
+#define F_CPU  16000000
+#define BAUD   9600
+#define BRC    ((F_CPU / 16 / BAUD) - 1) // Baud rate calculate
+#define SERIAL 1024
 
-double pwm = 0;
+int8_t serialBuffer[SERIAL];
+int serialPosWrite = 0;
+int serialPosRead = 0;
 
 int main(void)
 {
 	sei();
-	//PORTC0
 	
-	DDRD = (1 << PORTD6) | (1 << PORTD5);
+	// Usart Baud Rate register. Регистры настройки бод\сек
+	UBRR0H = (BRC >> 8); // Записываем 8 старших бит
+	UBRR0L = BRC; // Записываем 8 младших бит
 	
-	// Compare output mode, Fast PWM mode. Режим работы ШИМ
-	// Очистка счетчика, установка уровня в 0 при совпадении
-	TCCR0A = (1 << COM0A1); // Clear on compare match, set bottom OCR0A
-	TCCR0A |= (1 << COM0B1); // Clear on compare match, set bottom OCR0B
+	// Разрешаем прерывания USART
+	UCSR0B = (1 << TXEN0); // Включаем передачу через USART, отключая работу порта в обычном режиме
+	UCSR0B |= (1 << TXCIE0); // Разрешаем прерывание по завершение передачи байта
 	
-	// Waveform generation mode. Режим работы таймера
-	TCCR0A |= (1 << WGM01) | (1 << WGM00); // Fast PWM
+	// Parity. Контрольный бит проверки четности двоичного числа
+	// UCSR0C = (1 << UPM01); // Enable even parity
 	
-	// Clock select bit. Предделитель
-	TCCR0B = (1 << CS00); // Предделитель 1
+	// Control and status regiter n C.
+	// Настройки данных 
+	UCSR0C = (1 << UCSZ01) | (1 << UCSZ00); // Character size. Размер пакета. 8 бит
 	
-	// Output compare register
-	// Регистр сравнения
-	OCR0A = OCR0B = 0; // Всегда в 0. ШИМ уровень 5v, заканчивается сразу счета
-	
-	// Timer/Counter Interrupt mask register
-    // Разрешение прерывания
-	TIMSK0 = (1 << TOIE0); // Прерывание по переполнению счетчика
-	
-	// Multiplexer selection register
-	ADMUX = (1 << REFS0); // AVcc. Сравнение входящего напряжения с питанием 5v
-	
-	// Input channel selection. Выбор аналогового входа
-	ADMUX |= (1 << MUX0); // Порт ADC1 (PC1)
-	
-	// Adc control. Настройка сравнения
-	ADCSRA = (1 << ADEN); // ADC Enable. Включение аналогового конвертора
-	
-	// Включение разрешения на прерывания аналогового конвертора
-	// Сработает когда сконвертирует входное напряжение в цифру
-	ADCSRA |= (1 << ADIE); 
-	
-	ADCSRA |= (1 << ADPS0) | (1 << ADPS1) | (ADPS2); // 128
-	
-	// Digital input disable 
-	// Выключаем работу пина как цифрового, для работы в аналоговом режиме
-	DIDR0 = (1 << ADC1D);
-	
-	adcConvert();
-	while (1) {	
+	while(1) {
+		serialWrite("Message\n", 1); // \n - Символ переноса строки
+		_delay_ms(1000);
 	}	
 }
 
-void adcConvert()
-{
-	// Запускаем единичную конвертацию входящего напряжения в цифру
-	ADCSRA |= (1 << ADSC);
+void serialWrite(int8_t letters[], int8_t isNewLine){	
+	int i, cnt = strlen(letters);
+	
+	for (i = 0; i < cnt; i++) {
+		serialBuffer[serialPosWrite++] = letters[i];
+		
+		if (serialPosWrite >= SERIAL) {
+			serialPosWrite = 0;
+		}
+	}
+	
+	// UCSR0A. Регистр состояния передачи
+	// UDRE0. Флаг в UCSR0A говорящий о том что буффер готов к принятию новых данных
+	if (UCSR0A & (1 << UDRE0)) {
+		UDR0 = 0;
+	}	
 }
 
-ISR (ADC_vect) {
-	pwm = ADC / 4.0;
-	adcConvert();
-}
-
-ISR(TIMER0_OVF_vect) {
-	OCR0A = OCR0B = pwm;	
+// Прерывания завершения передачи байта
+ISR(USART_TX_vect) {
+	// Если есть что передавать
+	if (serialPosRead != serialPosWrite) {
+		// Установка байта в UDR0 автоматически передает его через USART
+		UDR0 = serialBuffer[serialPosRead++];
+		
+		if (serialPosRead > SERIAL) {
+			serialPosRead = 0;
+		}
+	}	
 }
 
