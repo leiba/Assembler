@@ -63,7 +63,7 @@ void adcConvert()
 }
 
 ISR (ADC_vect) {
-	pwm = ADC;
+	pwm = ADC / 4.0;
 	adcConvert();
 }
 

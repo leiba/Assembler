@@ -319,6 +319,7 @@ ISR (TIMER0_COMPB_vect) {
  Fast PWM (OCnA, OCnB)
 */
 #include <avr/interrupt.h>
+#include <util/delay.h>
 
 double pwm = 0;
 
@@ -364,6 +365,55 @@ int main(void)
  
  Datasheet -> Analog To Digital Converter
 */
+#include <avr/interrupt.h>
+
+double pwm = 0;
+
+int main(void)
+{
+    // Разрешаем глобальные прерывания
+    sei();
+		
+    // Multiplexer selection register
+    ADMUX = (1 << REFS0); // AVcc. Сравнение входящего напряжения с питанием 5v
+	
+    // Input channel selection. Выбор аналогового входа
+    ADMUX |= (1 << MUX0); // Порт ADC1 (PC1)
+	
+    // Adc control. Настройка сравнения
+    ADCSRA = (1 << ADEN); // ADC Enable. Включение аналогового конвертора
+	
+    // Включение разрешения на прерывания аналогового конвертора
+    // Сработает когда сконвертирует входное напряжение в цифру
+    ADCSRA |= (1 << ADIE); 
+	
+	// Prescaler. Деление частоты системы и частоты пина
+	ADCSRA |= (1 << ADPS0) | (1 << ADPS1) | (ADPS2); // 128
+	
+	// Digital input disable 
+	// Выключаем работу пина как цифрового, для работы в аналоговом режиме
+	DIDR0 = (1 << ADC1D);
+	
+	// Запускаем единичную конвертацию входящего напряжения в цифру
+	adcConvert();
+	
+	while (1) {}	
+}
+
+void adcConvert()
+{
+	// Запускаем единичную конвертацию входящего напряжения в цифру
+	ADCSRA |= (1 << ADSC);
+}
+
+ISR (ADC_vect) {
+	// Чтение значение напряжения на пине
+	// 0 .. 1024. ADC / 4.0 для конвертации в 0 .. 255
+	pwm = ADC;
+	
+	// Перезапуск конвертации
+	adcConvert();
+}
 
 // Обработка прерываения переполнения счетчика
 ISR(TIMER0_OVF_vect) {
