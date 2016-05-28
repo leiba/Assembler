@@ -359,6 +359,12 @@ int main(void)
     }	
 }
 
+/*
+ Analog read (ADCn)
+ 
+ Datasheet -> Analog To Digital Converter
+*/
+
 // Обработка прерываения переполнения счетчика
 ISR(TIMER0_OVF_vect) {
     // Устанавливаем сравнение для счетчика

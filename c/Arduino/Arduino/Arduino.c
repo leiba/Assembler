@@ -9,6 +9,7 @@ double pwm = 0;
 int main(void)
 {
 	sei();
+	//PORTC0
 	
 	DDRD = (1 << PORTD6) | (1 << PORTD5);
 	
@@ -30,17 +31,43 @@ int main(void)
 	// Timer/Counter Interrupt mask register
     // Разрешение прерывания
 	TIMSK0 = (1 << TOIE0); // Прерывание по переполнению счетчика
-
-	while (1) {
-		_delay_ms(10);
-		
-		if ((pwm += 1) > 100) {
-			pwm = 0;
-		}
+	
+	// Multiplexer selection register
+	ADMUX = (1 << REFS0); // AVcc. Сравнение входящего напряжения с питанием 5v
+	
+	// Input channel selection. Выбор аналогового входа
+	ADMUX |= (1 << MUX0); // Порт ADC1 (PC1)
+	
+	// Adc control. Настройка сравнения
+	ADCSRA = (1 << ADEN); // ADC Enable. Включение аналогового конвертора
+	
+	// Включение разрешения на прерывания аналогового конвертора
+	// Сработает когда сконвертирует входное напряжение в цифру
+	ADCSRA |= (1 << ADIE); 
+	
+	ADCSRA |= (1 << ADPS0) | (1 << ADPS1) | (ADPS2); // 128
+	
+	// Digital input disable 
+	// Выключаем работу пина как цифрового, для работы в аналоговом режиме
+	DIDR0 = (1 << ADC1D);
+	
+	adcConvert();
+	while (1) {	
 	}	
 }
 
+void adcConvert()
+{
+	// Запускаем единичную конвертацию входящего напряжения в цифру
+	ADCSRA |= (1 << ADSC);
+}
+
+ISR (ADC_vect) {
+	pwm = ADC;
+	adcConvert();
+}
+
 ISR(TIMER0_OVF_vect) {
-	OCR0A = OCR0B = (pwm / 100) * 255;	
+	OCR0A = OCR0B = pwm;	
 }
 
