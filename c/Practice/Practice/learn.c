@@ -587,7 +587,7 @@ int main(void)
             c = rxRead(); // \n Последний символ строки
 			
             if (c != '\n') {
-				txWrite("Received\n");
+                txWrite("Received\n");
             }			
         } else {
             _delay_ms(10);
