@@ -230,6 +230,12 @@ for(;;) {}
 #endif
 
 /*
+ Макросы очистки и установки бита
+*/
+#define cbi(sfr, bit) (_SFR_BYTE(sfr) &= ~_BV(bit))
+#define sbi(sfr, bit) (_SFR_BYTE(sfr) |= _BV(bit))
+
+/*
  Arduino UNO
 */
 1  - 

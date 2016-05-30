@@ -1,10 +1,10 @@
 Archive member included because of file (symbol)
 
-d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
-                              d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o (exit)
-d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_copy_data.o)
+d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+                              d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o (exit)
+d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_copy_data.o)
                               Arduino.o (__do_copy_data)
-d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
+d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
                               Arduino.o (__do_clear_bss)
 
 Allocating common symbols
@@ -26,14 +26,12 @@ signature        0x00840000         0x00000400         rw !x
 Linker script and memory map
 
 Address of section .data set to 0x800100
-LOAD d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o
+LOAD d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o
 LOAD Arduino.o
-START GROUP
-LOAD d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libm.a
-END GROUP
-LOAD d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a
-LOAD d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a
-LOAD d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a
+LOAD d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libm.a
+LOAD d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a
+LOAD d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a
+LOAD d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a
 
 .hash
  *(.hash)
@@ -127,7 +125,7 @@ LOAD d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/
 
 .text           0x00000000      0x1c4
  *(.vectors)
- .vectors       0x00000000       0x68 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o
+ .vectors       0x00000000       0x68 d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o
                 0x00000000                __vector_default
                 0x00000000                __vectors
  *(.vectors)
@@ -152,20 +150,20 @@ LOAD d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x00000068        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o
+ .init0         0x00000068        0x0 d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o
                 0x00000068                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x00000068        0xc d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o
+ .init2         0x00000068        0xc d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o
  *(.init2)
  *(.init3)
  *(.init3)
  *(.init4)
- .init4         0x00000074       0x16 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_copy_data.o)
+ .init4         0x00000074       0x16 d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_copy_data.o)
                 0x00000074                __do_copy_data
- .init4         0x0000008a       0x10 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
+ .init4         0x0000008a       0x10 d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
                 0x0000008a                __do_clear_bss
  *(.init4)
  *(.init5)
@@ -177,10 +175,10 @@ LOAD d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x0000009a        0x8 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o
+ .init9         0x0000009a        0x8 d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o
  *(.init9)
  *(.text)
- .text          0x000000a2        0x4 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o
+ .text          0x000000a2        0x4 d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o
                 0x000000a2                __vector_22
                 0x000000a2                __vector_1
                 0x000000a2                __vector_24
@@ -210,17 +208,17 @@ LOAD d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/
                 0x000000a6                serialWrite
                 0x00000112                main
                 0x00000158                __vector_20
- .text          0x000001c0        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
- .text          0x000001c0        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_copy_data.o)
- .text          0x000001c0        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
+ .text          0x000001c0        0x0 d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+ .text          0x000001c0        0x0 d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_copy_data.o)
+ .text          0x000001c0        0x0 d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
                 0x000001c0                . = ALIGN (0x2)
  *(.text.*)
- .text.libgcc   0x000001c0        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x000001c0        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x000001c0        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x000001c0        0x0 d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x000001c0        0x0 d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x000001c0        0x0 d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
                 0x000001c0                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000001c0        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+ .fini9         0x000001c0        0x0 d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
                 0x000001c0                _exit
                 0x000001c0                exit
  *(.fini9)
@@ -241,51 +239,51 @@ LOAD d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000001c0        0x4 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+ .fini0         0x000001c0        0x4 d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
  *(.fini0)
                 0x000001c4                _etext = .
 
-.data           0x00800100        0xa load address 0x000001c4
+.data           0x00800100        0xc load address 0x000001c4
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
- .data          0x00800100        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o
- .data          0x00800100        0x9 Arduino.o
- .data          0x00800109        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
- .data          0x00800109        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_copy_data.o)
- .data          0x00800109        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
+ .data          0x00800100        0x0 d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o
+ .data          0x00800100        0xb Arduino.o
+ .data          0x0080010b        0x0 d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+ .data          0x0080010b        0x0 d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_copy_data.o)
+ .data          0x0080010b        0x0 d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
  *(.data*)
  *(.rodata)
  *(.rodata*)
  *(.gnu.linkonce.d*)
-                0x0080010a                . = ALIGN (0x2)
- *fill*         0x00800109        0x1 00
-                0x0080010a                _edata = .
-                0x0080010a                PROVIDE (__data_end, .)
+                0x0080010c                . = ALIGN (0x2)
+ *fill*         0x0080010b        0x1 00
+                0x0080010c                _edata = .
+                0x0080010c                PROVIDE (__data_end, .)
 
-.bss            0x0080010a      0x404
-                0x0080010a                PROVIDE (__bss_start, .)
+.bss            0x0080010c      0x404
+                0x0080010c                PROVIDE (__bss_start, .)
  *(.bss)
- .bss           0x0080010a        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o
- .bss           0x0080010a        0x4 Arduino.o
-                0x0080010a                serialPosWrite
-                0x0080010c                serialPosRead
- .bss           0x0080010e        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
- .bss           0x0080010e        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_copy_data.o)
- .bss           0x0080010e        0x0 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
+ .bss           0x0080010c        0x0 d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o
+ .bss           0x0080010c        0x4 Arduino.o
+                0x0080010c                serialPosWrite
+                0x0080010e                serialPosRead
+ .bss           0x00800110        0x0 d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+ .bss           0x00800110        0x0 d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_copy_data.o)
+ .bss           0x00800110        0x0 d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
  *(.bss*)
  *(COMMON)
- COMMON         0x0080010e      0x400 Arduino.o
-                0x0080010e                serialBuffer
-                0x0080050e                PROVIDE (__bss_end, .)
+ COMMON         0x00800110      0x400 Arduino.o
+                0x00800110                serialBuffer
+                0x00800510                PROVIDE (__bss_end, .)
                 0x000001c4                __data_load_start = LOADADDR (.data)
-                0x000001ce                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x000001d0                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0080050e        0x0
-                0x0080050e                PROVIDE (__noinit_start, .)
+.noinit         0x00800510        0x0
+                0x00800510                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x0080050e                PROVIDE (__noinit_end, .)
-                0x0080050e                _end = .
-                0x0080050e                PROVIDE (__heap_start, .)
+                0x00800510                PROVIDE (__noinit_end, .)
+                0x00800510                _end = .
+                0x00800510                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -305,11 +303,11 @@ LOAD d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/
 
 .stab           0x00000000      0x6cc
  *(.stab)
- .stab          0x00000000      0x6cc d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o
+ .stab          0x00000000      0x6cc d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o
 
-.stabstr        0x00000000       0x97
+.stabstr        0x00000000       0x90
  *(.stabstr)
- .stabstr       0x00000000       0x97 d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o
+ .stabstr       0x00000000       0x90 d:/soft/avr5/extensions/atmel/avrgcc/3.3.1.27/avrtoolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm328p.o
 
 .stab.excl
  *(.stab.excl)
@@ -358,9 +356,9 @@ LOAD d:/soft/atmel/extensions/atmel/avrgcc/3.3.2.31/avrtoolchain/bin/../lib/gcc/
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x1ac Arduino.o
 
-.debug_line     0x00000000      0x232
+.debug_line     0x00000000      0x230
  *(.debug_line)
- .debug_line    0x00000000      0x232 Arduino.o
+ .debug_line    0x00000000      0x230 Arduino.o
 
 .debug_frame    0x00000000       0x40
  *(.debug_frame)
