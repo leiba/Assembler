@@ -552,10 +552,8 @@ int main(void)
 	
     UCSR0B = (1 << TXEN0);	
     UCSR0C = (1 << UCSZ01) | (1 << UCSZ00);
-	
-	DDRB = (1 << PORTB2);
 
-	while(1) {		
+    while(1) {		
         txWrite("Say\n");	
     }	
 }
